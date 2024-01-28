@@ -6,7 +6,7 @@ form.addEventListener('input', formInput);
 
 form.addEventListener('submit', submitData);
 
-function formInput() {
+function formInput(e) {
   e.preventDefault();
   const email = form.elements.email.value.trim();
   const message = form.elements.message.value.trim();
@@ -17,7 +17,7 @@ function formInput() {
   loadToLS(STORAGE_KEY, obj);
 }
 
-function submitData() {
+function submitData(e) {
   e.preventDefault();
   if (form.elements.email.value && form.elements.message.value) {
     const obj = localStorage.getItem(STORAGE_KEY);
